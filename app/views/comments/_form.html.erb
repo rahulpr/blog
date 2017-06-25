@@ -1,0 +1,21 @@
+<hr />
+
+<h3>Add New Comment</h3>
+
+<%= form_for([@post, @post.comments.build]) do |c| %>
+
+<%# or form_for :comment, url: post_comments_path(@post) do |c| %>
+
+	<p>
+		<%= c.label :username %><br />
+		<%= c.text_field(:username,{required: true, minlength: 6, class: 'form-control'}) %>
+	</p>
+	<p>
+		<%= c.label :body %><br />
+		<%= c.text_area(:body,{required: true, class: 'form-control'}) %>
+	</p>
+	<p>
+		<%= c.submit(:Send,{class: 'btn btn-primary'}) %>
+	</p>
+	
+<% end %>

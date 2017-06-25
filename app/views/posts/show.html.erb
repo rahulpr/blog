@@ -1,0 +1,6 @@
+<h2><%= @post.title %> <%= link_to 'Back to Posts', posts_path, class: 'btn btn-primary pull-right' %></h2>
+
+<p><%= @post.body %></p>
+
+<%= render 'comments/comments' %>
+<%= render 'comments/form' %>
